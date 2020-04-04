@@ -81,12 +81,13 @@ class App extends Component {
    }
 
 render(){
-  var profile = "";
+  var profile = "",github="";
   if(this.state.accessToken){
     profile = <User  profile = {this.state.profile} />;
+    github = <Github />;
   }
   else{
-    profile = "Please Login";
+    profile = "Please Login to Continue";
   }
 return(
   <div className="App" >
@@ -98,8 +99,8 @@ return(
   onLogin={this.showLock} />
   </header>
   {profile}
-  <br />
-  <Github />
+  {github}
+  <br/>
 </div>
 );
 }
